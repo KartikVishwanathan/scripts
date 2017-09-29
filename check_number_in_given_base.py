@@ -1,17 +1,16 @@
-'''Inputs are two strings, base and number. Base must satisfy 2 <= base <= 36. 
-Number is an alpanumeric string. First check if base is valid, then check if number is valid
-in the given base. To do that, note that each digit in the number corresponds to itself while each
-letter in the number corresponds to a number. For example a -> 10, b ->11, ...., z -> 35
-(Just like extensions of hexadecimal system, allowing letters nt just upto F but till Z.)
+'''
+You are given 2 input strings;  base and number.  Base must satisfy 2 <= base <= 36. 
+Number is a string consisting of letters and numbers.
 
-If both number and base are valid, convert the number to decimal. '''
+First check if base is valid, then check if number is valid in the given base. 
+If both number and base are valid, convert the given number to its decimal representation. 
+'''
 
 
 def check_number(base, number):
   if not 2 <= int(base) <= 36:
     return 'Invalid Base'
   else:
-    valid = True
     validity_checker = [0]*36
     for ch in number:
       if ch in '0123456789':
@@ -26,8 +25,13 @@ def check_number(base, number):
         if index >= int(base):
           return 'Invalid number'
   
-  if valid:
-    result = 0
-    for i, ch in enumerate(reversed(number)):
-      result = result + validity_checker.index(ch)*int(base)**i
-    return result  
+  result = 0
+  for i, elem in enumerate(reversed(number)):
+    result = result + validity_checker.index(elem)*int(base)**i
+  return result  
+  
+  '''
+  Comment:
+  A number is valid in a given base iff all the characters in the number are 'less than'
+  the base.
+  '''

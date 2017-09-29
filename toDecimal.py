@@ -2,7 +2,7 @@
 You are given 2 input strings;  base and number.  Base must satisfy 2 <= base <= 36. 
 Number is a string consisting of letters and numbers.
 
-First check if base is valid, then check if number is valid in the given base. 
+First check if base is valid; then check if number is valid in the given base. 
 If both number and base are valid, convert the given number to its decimal representation. 
 '''
 

@@ -34,8 +34,9 @@ class Solution(object):
             # Convert to a tuple first as lists are not hashable. 
                 
 
-''' Comments: 
+""" Comments: 
     The bruteforce solution is O(n^3) in complexity. It is wasteful as it 
     does a lot more comparisons than needed. One solution is to
     sort the given array (in place) and then advance from both ends of the 
-    array.'''
+    array. This approach has time complexity O(n^2).
+    """"

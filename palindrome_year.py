@@ -36,10 +36,8 @@ def palindrome_count(year):
                 if 1 <= day <= 9:
                      day_str = '0' + str(day)
                 else:
-                     day_str = str(day)
-                        
+                     day_str = str(day)         
                 date_str = str(month + 1) + day_str + str(year)
-                
                 if is_palindrome(date_str):
                     palindrome_count +=  1
                 elif  not is_palindrome(date_str) and len(date_str) == 7:
